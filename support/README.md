@@ -1,2 +1,2 @@
 # お問い合わせ
-* TODO meailng list
+* [お問い合わせはこちら](<mailto:contact@nautible.com>)
