@@ -25,17 +25,17 @@
 ```
 >skaffold dev --port-forward
 Listing files to watch...
- - XXXXXXXXXXXX.dkr.ecr.ap-northeast-1.amazonaws.com/nautible-app-customer
+ - XXXXXXXXXXXX.dkr.ecr.ap-northeast-1.amazonaws.com/nautible-app-ms-customer
 Generating tags...
- - XXXXXXXXXXXX.dkr.ecr.ap-northeast-1.amazonaws.com/nautible-app-customer -> XXXXXXXXXXXX.dkr.ecr.ap-northeast-1.amazonaws.com/nautible-app-customer:9bce2ed-dirty
+ - XXXXXXXXXXXX.dkr.ecr.ap-northeast-1.amazonaws.com/nautible-app-ms-customer -> XXXXXXXXXXXX.dkr.ecr.ap-northeast-1.amazonaws.com/nautible-app-ms-customer:9bce2ed-dirty
 Found [minikube] context, using local docker daemon.
-Building [XXXXXXXXXXXX.dkr.ecr.ap-northeast-1.amazonaws.com/nautible-app-customer]...
+Building [XXXXXXXXXXXX.dkr.ecr.ap-northeast-1.amazonaws.com/nautible-app-ms-customer]...
 ~省略~
 Press Ctrl+C to exit
 Watching for changes...
-Port forwarding service/customer-dynamodb in namespace nautible-app, remote port 4566 -> address 127.0.0.1 port 4566
-Port forwarding service/nautible-app-customer in namespace nautible-app, remote port 8080 -> address 127.0.0.1 port 8080
-Port forwarding service/nautible-app-customer in namespace nautible-app, remote port 9000 -> address 127.0.0.1 port 9002
+Port forwarding service/customer-dynamodb in namespace nautible-app-ms, remote port 4566 -> address 127.0.0.1 port 4566
+Port forwarding service/nautible-app-ms-customer in namespace nautible-app-ms, remote port 8080 -> address 127.0.0.1 port 8080
+Port forwarding service/nautible-app-ms-customer in namespace nautible-app-ms, remote port 9000 -> address 127.0.0.1 port 9002
 
 ```
 
@@ -182,7 +182,7 @@ spec:
 
 アプリケーションのマニフェストはkustomizeで管理している。baseに全環境共通の定義、overlaysに各環境固有の定義（差分）を行い、kustomizeでマージした結果を各環境に適用している。
 ```
-nautible-app-xxx-manifest
+nautible-app-ms-xxx-manifest
   │
   ├─base     ・・・全環境共通のマニフェストを管理する。
   │
