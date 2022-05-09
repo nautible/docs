@@ -93,7 +93,7 @@ local-dev.quarkus.log.console.json=false
 ```
 ~省略~
   containers:
-  - name: nautible-app-customer
+  - name: nautible-app-ms-customer
     env:
 　　　~省略~
     - name: JAVA_VERSION
@@ -105,14 +105,14 @@ local-dev.quarkus.log.console.json=false
 Listing files to watch...
 ~省略~
 Press Ctrl+C to exit
-Forwarding container nautible-app-customer-ff499f84c-r4vhp/nautible-app-customer to local port 8081.
+Forwarding container nautible-app-ms-customer-ff499f84c-r4vhp/nautible-app-ms-customer to local port 8081.
 Not watching for changes...
-Port forwarding service/nautible-app-customer in namespace nautible-app, remote port 8080 -> address 127.0.0.1 port 8080
-Port forwarding pod/nautible-app-customer-ff499f84c-r4vhp in namespace nautible-app, remote port 8080 -> address 127.0.0.1 port 8081
-Forwarding container nautible-app-customer-ff499f84c-r4vhp/nautible-app-customer to local port 9003.
-Port forwarding service/nautible-app-customer in namespace nautible-app, remote port 9000 -> address 127.0.0.1 port 9002
-Port forwarding pod/nautible-app-customer-ff499f84c-r4vhp in namespace nautible-app, remote port 9000 -> address 127.0.0.1 port 9003
-Port forwarding pod/nautible-app-customer-ff499f84c-r4vhp in namespace nautible-app, remote port 5005 -> address 127.0.0.1 port 5005
+Port forwarding service/nautible-app-ms-customer in namespace nautible-app-ms, remote port 8080 -> address 127.0.0.1 port 8080
+Port forwarding pod/nautible-app-ms-customer-ff499f84c-r4vhp in namespace nautible-app-ms, remote port 8080 -> address 127.0.0.1 port 8081
+Forwarding container nautible-app-ms-customer-ff499f84c-r4vhp/nautible-app-ms-customer to local port 9003.
+Port forwarding service/nautible-app-ms-customer in namespace nautible-app-ms, remote port 9000 -> address 127.0.0.1 port 9002
+Port forwarding pod/nautible-app-ms-customer-ff499f84c-r4vhp in namespace nautible-app-ms, remote port 9000 -> address 127.0.0.1 port 9003
+Port forwarding pod/nautible-app-ms-customer-ff499f84c-r4vhp in namespace nautible-app-ms, remote port 5005 -> address 127.0.0.1 port 5005
 ```
 
 ### 監視

@@ -23,7 +23,7 @@ nautibleの技術スタックを適用することで、以下のような開発
   | ---- | ---- |
   | コンテナ化 | <ul><li>Docker</li></ul> |
   | CI/CD | <ul><li>ArgoCD</li><li>GitHub Actions</li></ul> |
-  | オーケストレーション | <ul><li>Amazon EKS</li></ul> |
+  | オーケストレーション | <ul><li>Amazon EKS</li><li>Azure AKS</li></ul> |
   | 可観測性・分析 | <ul><li>prometheus</li><li>Grafana</li></ul> |
   | プロキシ・サービスメッシュ | <ul><li>Istio</li></ul> |
   | ネットワーク・セキュリティ | <ul><li>T.B.D</li></ul> |
@@ -76,8 +76,14 @@ nautibleは以下のリポジトリを公開しています。必要なリポジ
     <tr>
       <td>インフラ構築</td>
       <td>nautible-infra</td>
-      <td><ul><li>Infrastructure as Codeの実装</li><li>ArgoCDの構成例</li></ul></td>
-      <td><ul><li>AWS上にEKSクラスタを構築し、リファレンスアプリケーションをデプロイするものです</li></ul></td>
+      <td><ul><li>Infrastructure as Codeの実装</li></ul></td>
+      <td><ul><li>クラウド上にKubernetesクラスタを構築します</li></ul></td>
+    </tr>
+    <tr>
+      <td>エコシステム・アプリケーションの導入</td>
+      <td>nautible-plugin</td>
+      <td><ul><li>エコシステム・アプリケーション導入用マニフェストファイル</li></ul></td>
+      <td><ul><li>Kubernetes上にエコシステムやサンプルアプリケーションを導入します</li></ul></td>
     </tr>
     <tr>
       <td>リファレンスアプリケーション</td>

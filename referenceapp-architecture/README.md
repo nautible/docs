@@ -40,7 +40,7 @@
 ---
 ## 7. 運用
 ### 7.1 サービスの運用
-- [動作確認用テストデータ](https://github.com/nautible/nautible-app-order/blob/main/testdata.md
+- [動作確認用テストデータ](https://github.com/nautible/nautible-app-ms-order/blob/main/testdata.md
  "動作確認用テストデータ")
 - [Istio](https://github.com/nautible/nautible-infra/blob/main/ArgoCD/ecosystems/base/istio/README.md)
 - [監視系（モニタリング/ロギング/トレーシング）](https://github.com/nautible/nautible-infra/blob/main/ArgoCD/ecosystems/base/observation/README.md "監視系（モニタリング/ロギング/トレーシング）")
