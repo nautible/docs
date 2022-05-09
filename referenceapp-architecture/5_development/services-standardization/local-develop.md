@@ -22,7 +22,7 @@
 
 以下は`skaffold dev`を実行した結果
 
-```
+```text
 >skaffold dev --port-forward
 Listing files to watch...
  - XXXXXXXXXXXX.dkr.ecr.ap-northeast-1.amazonaws.com/nautible-app-ms-customer
@@ -50,7 +50,7 @@ Skaffoldは起動ディレクトリ直下にあるskaffold.yaml定義ファイ�
 
 中核となる設定は下記の通り。詳細は[公式ドキュメント](https://skaffold.dev/docs/references/yaml/)を参照。
 
-```
+```yaml
 apiVersion: skaffold/v2beta20
 kind: Config
 build:
@@ -75,6 +75,7 @@ Skaffoldのコマンド引数にport-forwardオプションを付与して実行
  複数の環境を利用する場合などにプロファイルを活用して接続先の変更や環境差異を吸収することなどができる。環境変数、Kubernetesの接続先、ビルドパラメータなど様々な定義を行う事ができる。詳細については[公式](https://skaffold.dev/docs/environment/profiles/)を参照。
 
 ## コードの自動生成について
+
 - REST
   openapi-generator-maven-pluginで[openapi](https://www.openapis.org/)の定義からIFを自動生成する。
 
@@ -88,7 +89,8 @@ Istioのオープントレーシング(Jaeger)を利用する。istioがオー�
   - url
   - http-method
   - gRPC-method
-```
+
+```text
 <参考ソース>
 jp.co.ogis_ri.nautible.app.customer.core.rest.RestMDCInterceptor
 jp.co.ogis_ri.nautible.app.customer.core.grpc.GrpcMDCInterceptor
@@ -98,7 +100,8 @@ jp.co.ogis_ri.nautible.app.customer.core.grpc.GrpcMDCInterceptor
   Grafanaでアプリケーションが出力したログを解析、フィルタリングするためにPrometailにjsonフォーマットのログ出力内容について定義する。定義内容の概要については[こちら](https://github.com/nautible/nautible-infra/blob/main/ArgoCD/ecosystems/base/observation/docs/logging.md)。
 
 nautible-infra\ArgoCD\apps\observation\promtail\application.yaml
-```
+
+```yaml
             - json:
                 expressions:
                   level: level
@@ -133,7 +136,8 @@ nautible-infra\ArgoCD\apps\observation\promtail\application.yaml
   prometheusのアラートルールでエラーログ検知を行うためのメトリクス定義を行う。定義内容の概要については[こちら](https://github.com/nautible/nautible-infra/blob/main/ArgoCD/ecosystems/base/observation/docs/logging.md)。
 
 nautible-infra\ArgoCD\apps\observation\promtail\application.yaml
-```
+
+```yaml
             - metrics:
                 log_error_total:
                   type: Counter
@@ -151,7 +155,8 @@ Prometailで登録したメトリクスを利用し、Prometheusのアラート�
 定義内容の概要については[こちら](https://github.com/nautible/nautible-infra/blob/main/ArgoCD/ecosystems/base/observation/docs/custom-rule.md)。
 
 nautible-infra\ArgoCD/apps/observation/rules/base/customer-rule.yaml
-```
+
+```yaml
 spec:
   groups:
   - name: rules-customer-alert1
@@ -181,7 +186,8 @@ spec:
 ## マニフェスト管理プロジェクトのフォルダ基本構成
 
 アプリケーションのマニフェストはkustomizeで管理している。baseに全環境共通の定義、overlaysに各環境固有の定義（差分）を行い、kustomizeでマージした結果を各環境に適用している。
-```
+
+```text
 nautible-app-ms-xxx-manifest
   │
   ├─base     ・・・全環境共通のマニフェストを管理する。
@@ -196,21 +202,25 @@ nautible-app-ms-xxx-manifest
 
 minikubeからAWSのECRにアクセスする場合に以下の方法で社内Proxy認証を通す事ができる。
 - [minikubeのregistry-credsを有効にする](https://minikube.sigs.k8s.io/docs/tutorials/configuring_creds_for_aws_ecr/#configuring-and-enabling-the-registry-creds-addon)
-```
+
+```bash
 minikube addons configure registry-creds
 ```
-```
+
+```bash
 minikube addons enable registry-creds
 ```
+
 - registry-credsを含むすべてのpodの環境変数にProxy設定を行う
-  - [nautible-aw(Tool）](https://github.com/nautible/nautible-infra/tree/main/k8s/nautible-aw)ページの適用方法にしたがってnautible-awを適用する。
+  - [nautible-admission-webhook(Tool）](https://github.com/nautible/nautible-admission-webhook)ページの適用方法にしたがってnautible-admission-webhookを適用する。
   その時に、以下の環境変数をpodに適用するよう設定する。
 
-```
+```text
 HTTPS_PROXY=http://${USER_ID}:${PW}@${PROXY_HOST}:${PROXY_PORT}
 HTTP_PROXY=http://${USER_ID}:${PW}@${PROXY_HOST}:${PROXY_PORT}
 NO_PROXY=127.0.0.1,localhost,${その他各環境毎に必要な値を追加}
 ```
+
 上記$で始まる変数は、各環境に合わせて書き換えて適用する。
 
 ## minikubeの注意点
@@ -218,11 +228,14 @@ NO_PROXY=127.0.0.1,localhost,${その他各環境毎に必要な値を追加}
 * minikubeはデフォルトでminikube組み込みのDokcerデーモンからimageを取得する。以下のコマンドを実行する事で、skaffoldがビルドしたDocker imageをminikubeの参照先に配置する事ができる。
 
 Windowsの場合
-```
+
+```text
 @FOR /f "tokens=*" %i IN ('minikube -p minikube docker-env') DO @%i
 ```
+
 Macの場合
-```
+
+```bash
 eval $(minikube docker-env)
 ```
 
