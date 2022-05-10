@@ -35,15 +35,15 @@
 ---
 ## 6. 配置
 ### 6.1 CI/CD
-- [CI/CD](https://github.com/nautible/nautible-infra/blob/main/ci_cd/README.md "CI/CD")
+- [CI/CD](https://github.com/nautible/nautible-infra/blob/main/ArgoCD/README.md "CI/CD")
 
 ---
 ## 7. 運用
 ### 7.1 サービスの運用
 - [動作確認用テストデータ](https://github.com/nautible/nautible-app-ms-order/blob/main/testdata.md
  "動作確認用テストデータ")
-- [Istio](https://github.com/nautible/nautible-plugin/blob/main/service-mesh/README.md)
-- [監視系（モニタリング/ロギング/トレーシング）](https://github.com/nautible/nautible-plugin/blob/main/observation/README.md "監視系（モニタリング/ロギング/トレーシング）")
+- [Istio](https://github.com/nautible/nautible-infra/blob/main/ArgoCD/ecosystems/base/istio/README.md)
+- [監視系（モニタリング/ロギング/トレーシング）](https://github.com/nautible/nautible-infra/blob/main/ArgoCD/ecosystems/base/observation/README.md "監視系（モニタリング/ロギング/トレーシング）")
 - 計画停止・起動
   - [EKS](https://github.com/nautible/nautible-infra/blob/main/aws/terraform/nautible-aws-platform/modules/tool/eks-planned-outage/README.md)
   - [AKS](https://github.com/nautible/nautible-infra/blob/main/azure/terraform/nautible-azure-platform/modules/tool/aks-planned-outage/README.md)

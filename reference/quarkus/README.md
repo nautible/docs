@@ -119,7 +119,7 @@ Port forwarding pod/nautible-app-ms-customer-ff499f84c-r4vhp in namespace nautib
 - Prometailのメトリクス定義
   prometheusのアラートルールでエラーログ検知を行うためのメトリクス定義を行っています。Quarkusが依存するライブラリによってはエラーレベル「SEVERE」でエラーログを出力するのでメトリクスを２つ定義する必要があります（valueには複数の値や正規表現が定義できない）。
 
-nautible-plugin\observation\promtail\application.yaml
+nautible-infra\ArgoCD\apps\observation\promtail\application.yaml
 ```
             - metrics:
                 log_error_total:
