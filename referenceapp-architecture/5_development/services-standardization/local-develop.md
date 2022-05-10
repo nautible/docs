@@ -97,9 +97,9 @@ jp.co.ogis_ri.nautible.app.customer.core.grpc.GrpcMDCInterceptor
 ```
 
 - Grafana/Prometail
-  Grafanaでアプリケーションが出力したログを解析、フィルタリングするためにPrometailにjsonフォーマットのログ出力内容について定義する。定義内容の概要については[こちら](https://github.com/nautible/nautible-infra/blob/main/ArgoCD/ecosystems/base/observation/docs/logging.md)。
+  Grafanaでアプリケーションが出力したログを解析、フィルタリングするためにPrometailにjsonフォーマットのログ出力内容について定義する。定義内容の概要については[こちら](https://github.com/nautible/nautible-plugin/blob/main/observation/docs/logging.md)。
 
-nautible-infra\ArgoCD\apps\observation\promtail\application.yaml
+nautible-plugin\observation\promtail\application.yaml
 
 ```yaml
             - json:
@@ -133,9 +133,9 @@ nautible-infra\ArgoCD\apps\observation\promtail\application.yaml
 ## Observation
 
 - Prometailのメトリクス定義
-  prometheusのアラートルールでエラーログ検知を行うためのメトリクス定義を行う。定義内容の概要については[こちら](https://github.com/nautible/nautible-infra/blob/main/ArgoCD/ecosystems/base/observation/docs/logging.md)。
+  prometheusのアラートルールでエラーログ検知を行うためのメトリクス定義を行う。定義内容の概要については[こちら](https://github.com/nautible/nautible-plugin/blob/main/observation/docs/logging.md)。
 
-nautible-infra\ArgoCD\apps\observation\promtail\application.yaml
+nautible-plugin\observation\promtail\application.yaml
 
 ```yaml
             - metrics:
@@ -152,9 +152,9 @@ nautible-infra\ArgoCD\apps\observation\promtail\application.yaml
 
 - Prometheusのアラートルール
 Prometailで登録したメトリクスを利用し、Prometheusのアラートルールにpodの起動数とエラーログ検知のルールを定義する。
-定義内容の概要については[こちら](https://github.com/nautible/nautible-infra/blob/main/ArgoCD/ecosystems/base/observation/docs/custom-rule.md)。
+定義内容の概要については[こちら](https://github.com/nautible/nautible-plugin/blob/main/observation/docs/custom-rule.md)。
 
-nautible-infra\ArgoCD/apps/observation/rules/base/customer-rule.yaml
+nautible-plugin\observation\rules\base\customer-rule.yaml
 
 ```yaml
 spec:
