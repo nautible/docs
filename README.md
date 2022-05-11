@@ -1,4 +1,4 @@
-# nautibleⓇ
+# nautible®
 nautible は、Kubernetes(k8s) を基盤としたマイクロサービスアプリケーション、及び環境構築テンプレートです。
 株式会社 オージス総研の nautible 開発メンバーにより開発・運営されています。
 
