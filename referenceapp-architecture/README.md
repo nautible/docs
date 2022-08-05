@@ -40,8 +40,9 @@
 ---
 ## 7. 運用
 ### 7.1 サービスの運用
-- [動作確認用テストデータ](https://github.com/nautible/nautible-app-ms-order/blob/main/testdata.md
- "動作確認用テストデータ")
+- 動作確認用テストデータ
+  - [注文サービス](https://github.com/nautible/nautible-app-ms-order/blob/main/testdata.md)
+  - [商品サービス](https://github.com/nautible/nautible-app-ms-product/blob/main/testdata.md)
 - [Istio](https://github.com/nautible/nautible-plugin/blob/main/service-mesh/README.md)
 - [監視系（モニタリング/ロギング/トレーシング）](https://github.com/nautible/nautible-plugin/blob/main/observation/README.md "監視系（モニタリング/ロギング/トレーシング）")
 - 計画停止・起動
