@@ -20,7 +20,7 @@
 
 ## 事前準備
 
-WSL2上にkubectlを導入し、kubernetesへアクセスできるようにする（クラウドを利用する際はクラウドののCLI（AWS上だとawscli等）も必要に応じて導入）
+WSL2上にkubectlを導入し、kubernetesへアクセスできるようにする（クラウドを利用する際はクラウドのCLI（AWS上だとawscli等）も必要に応じて導入）
 
 ## Telepresenceのインストール
 
