@@ -24,6 +24,8 @@ nautibleの技術スタックを適用することで、以下のような開発
   | コンテナ化 | <ul><li>Docker</li></ul> |
   | CI/CD | <ul><li>ArgoCD</li><li>GitHub Actions</li></ul> |
   | オーケストレーション | <ul><li>Amazon EKS</li><li>Azure AKS</li></ul> |
+  | 分散アプリケーションランタイム | <ul><li>Dapr</li></ul> |
+  | コンテナワークフローエンジン | <ul><li>ArgoWorkflows</li></ul> |
   | 可観測性・分析 | <ul><li>prometheus</li><li>Grafana</li></ul> |
   | プロキシ・サービスメッシュ | <ul><li>Istio</li></ul> |
   | ネットワーク・セキュリティ | <ul><li>T.B.D</li></ul> |

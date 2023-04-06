@@ -10,4 +10,7 @@
 ## [Dapr](./dapr/README.md "Dapr")
 
 ---
+## [Argo Workflows](./argowf/README.md "Argo Workflows")
+
+---
 ## [nautible-infra](https://github.com/nautible/nautible-infra/blob/main/README.md "nautible-infra")
