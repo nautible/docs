@@ -7,11 +7,12 @@ Argo WorkflowsはKubernetesで並列ジョブをオーケストレーション�
 ## 開発Tips
 
 ### Argo Workflows＋Daprの注意点
-- Argo Workflowsで実行するアプリケーションにDaprを適用する場合にはいくつか注意すべき点がありますが、Argo Workflows＋Daprに対する記載はいずれの公式サイトにも記載は無く、非公式でも情報はほとんど無いため、本READMEにて記載します。
+- Argo Workflowsで実行するアプリケーションにDaprを適用する場合に注意すべき点を本READMEで記載します。
 
 #### ▽ Argo Workflowsで実行するアプリケーションへのDaprの適用
-- DaprサイドカーをPodにインジェクトさせるためには、当該ControllerのServiceAccountがDapr Injectorが管理するアカウントリストにリストアップされている必要があります。Kubernetes標準のController群のService Accountについてはデフォルトでリストアップされているため、特に意識することなくDaprサイドカーをPodにインジェクトさせることができます。一方、Argo WorkflowsではWorkflow Controllerがワークフロー定義に従って実行するアプリケーションのPod制御を行います。そのため、Kubernetes標準ではないArgo Workflows独自のControllerが制御するPodにDaprサイドカーをインジェクトさせるためには、Dapr Injectorが管理するアカウントリストにアカウント追加する必要があります。
-  - Dapr Injectorが管理するアカウントリストに追加するには、Daprの以下のHelmオプションパラメータを用います。
+- PodにDaprサイドカーをインジェクションさせるためには、当該Podを制御するControllerのServiceAccountがDapr Injectorが管理するアカウントリストにリストアップされている必要があります。Kubernetes標準のController群のService Accountについてはデフォルトでリストアップされているため、特に意識することなくPodにDaprサイドカーをインジェクションさせることができます。
+- 一方、Argo WorkflowsではWorkflow ControllerがPod制御を行います。そのため、Kubernetes標準ではないArgo Workflows独自のControllerが制御するPodにDaprサイドカーをインジェクションさせるためには、Dapr Injectorが管理するアカウントリストに当該アカウントを追加する必要があります。
+  - Dapr Injectorが管理するアカウントリストにアカウントを追加するには、Daprの以下のHelmオプションパラメータを用います。
     ```properties
     dapr_sidecar_injector.allowedServiceAccounts=<Argo Workflows名前空間>:argo-workflows-workflow-controller
     ```
@@ -26,4 +27,5 @@ Argo WorkflowsはKubernetesで並列ジョブをオーケストレーション�
     daprClient.shutdown().block();
     daprClient.close();
     ```
+
   - 詳細は、nautible-app-ms-stock-batchにある [CmdStockQuantityCheckService](https://github.com/nautible/nautible-app-ms-stock-batch/blob/main/nautible-app-ms-stock-batch-core/src/main/java/jp/co/ogis_ri/nautible/app/stock/batch/inbound/cmd/CmdStockQuantityCheckService.java) を参照してください。
