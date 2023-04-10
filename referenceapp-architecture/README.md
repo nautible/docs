@@ -43,6 +43,11 @@
 - 動作確認用テストデータ
   - [注文サービス](https://github.com/nautible/nautible-app-ms-order/blob/main/testdata.md)
   - [商品サービス](https://github.com/nautible/nautible-app-ms-product/blob/main/testdata.md)
+  - [在庫サービス](https://github.com/nautible/nautible-app-ms-stock/blob/main/testdata.md)
+  - [在庫(バッチ)サービス](https://github.com/nautible/nautible-app-ms-stock-batch/blob/main/testdata.md)
+  - [決済サービス](https://github.com/nautible/nautible-app-ms-payment/blob/main/testdata.md)
+  - [顧客サービス](https://github.com/nautible/nautible-app-ms-customer/blob/main/testdata.md)
+  - [出荷サービス](https://github.com/nautible/nautible-app-ms-delivery/blob/main/testdata.md)
 - [Istio](https://github.com/nautible/nautible-plugin/blob/main/service-mesh/README.md)
 - [監視系（モニタリング/ロギング/トレーシング）](https://github.com/nautible/nautible-plugin/blob/main/observation/README.md "監視系（モニタリング/ロギング/トレーシング）")
 - 計画停止・起動
