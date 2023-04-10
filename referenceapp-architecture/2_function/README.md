@@ -25,7 +25,7 @@
 ## 在庫サービス
 在庫関連の機能を提供するサービスです。
 - リポジトリ  
-  nautible-app-ms-stock
+  nautible-app-ms-stock / nautible-app-ms-stock-batch
 - 機能  
   - 在庫引当予約  
     在庫引当の予約を行うAPI。SAGAオーケストレーションから実行されます。在庫数を確認し、在庫引当の予約を行います。
